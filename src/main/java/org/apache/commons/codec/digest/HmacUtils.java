@@ -75,9 +75,13 @@ public final class HmacUtils {
      * @deprecated (1.11) Use {@code getInitializedMac(HmacAlgorithms.HMAC_MD5, byte[])}
      */
     @Deprecated
+/**
+ * Do not forget to remove this deprecated code someday.
+ */
     public static Mac getHmacMd5(final byte[] key) {
         return getInitializedMac(HmacAlgorithms.HMAC_MD5, key);
     }
+
 
     /**
      * Returns an initialized {@code Mac} for the HmacSHA1 algorithm.
