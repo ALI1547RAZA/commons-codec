@@ -82,7 +82,6 @@ public final class HmacUtils {
         return getInitializedMac(HmacAlgorithms.HMAC_MD5, key);
     }
 
-
     /**
      * Returns an initialized {@code Mac} for the HmacSHA1 algorithm.
      * <p>
