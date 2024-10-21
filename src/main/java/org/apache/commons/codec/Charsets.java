@@ -21,7 +21,6 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * Charsets required of every implementation of the Java platform.
- *
  * From the Java documentation <a href="https://docs.oracle.com/javase/6/docs/api/java/nio/charset/Charset.html">Standard
  * charsets</a>:
  * <p>
@@ -136,37 +135,7 @@ public class Charsets {
     @Deprecated
     public static final Charset UTF_8 = StandardCharsets.UTF_8;
 
-    /**
-     * Returns the given Charset or the default Charset if the given Charset is null.
-     *
-     * @param charset
-     *            A charset or null.
-     * @return the given Charset or the default Charset if the given Charset is null
-     */
-    public static Charset toCharset(final Charset charset) {
-        return charset == null ? Charset.defaultCharset() : charset;
-    }
-
-    /**
-     * Returns a Charset for the named charset. If the name is null, return the default Charset.
-     *
-     * @param charset
-     *            The name of the requested charset, may be null.
-     * @return a Charset for the named charset
-     * @throws java.nio.charset.UnsupportedCharsetException
-     *             If the named charset is unavailable
-     */
-    public static Charset toCharset(final String charset) {
-        return charset == null ? Charset.defaultCharset() : Charset.forName(charset);
-    }
-
-    /**
-     * TODO Make private in 2.0.
-     *
-     * @deprecated TODO Make private in 2.0.
-     */
-    @Deprecated
-    public Charsets() {
+    private Charsets() {
         // empty
     }
 }
