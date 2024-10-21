@@ -56,7 +56,11 @@ import java.nio.charset.StandardCharsets;
  * @since 1.4
  */
 public class CharEncoding {
-
+ 
+    // Private constructor to prevent instantiation
+    private CharEncoding() {
+        // Prevents instantiation
+    }
     /**
      * CharEncodingISO Latin Alphabet No. 1, a.k.a. ISO-LATIN-1.
      * <p>

@@ -40,13 +40,7 @@ public class Resources {
         return inputStream;
     }
 
-    /**
-     * TODO Make private in 2.0.
-     *
-     * @deprecated TODO Make private in 2.0.
-     */
-    @Deprecated
-    public Resources() {
-        // empty
+    private Resources() {
+        
     }
 }
