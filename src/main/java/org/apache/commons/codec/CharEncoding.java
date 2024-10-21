@@ -21,8 +21,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 /**
- * Character encoding names required of every implementation of the Java platform.
- *
+ * Character encoding names required of every implementation of the Java platform.*
  * From the Java documentation for {@link Charset}:
  * <p>
  * <cite>Every implementation of the Java platform is required to support the following character encodings. Consult the
