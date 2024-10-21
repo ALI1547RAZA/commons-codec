@@ -41,6 +41,6 @@ public class Resources {
     }
 
     private Resources() {
-        // empty
+        
     }
 }
