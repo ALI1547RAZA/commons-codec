@@ -1284,7 +1284,6 @@ public class DigestUtils {
 
     /**
      * Reads through a RandomAccessFile and updates the digest for the data using non-blocking-io (NIO).
-     *
      * TODO Decide if this should be public.
      *
      * @param digest The MessageDigest to use (e.g. MD5)
@@ -1384,7 +1383,6 @@ public class DigestUtils {
 
     /**
      * Creates an instance using the provided {@link MessageDigest} parameter.
-     *
      * This can then be used to create digests using methods such as {@link #digest(byte[])} and {@link #digestAsHex(File)}.
      *
      * @param digest the {@link MessageDigest} to use
@@ -1396,7 +1394,6 @@ public class DigestUtils {
 
     /**
      * Creates an instance using the provided {@link MessageDigest} parameter.
-     *
      * This can then be used to create digests using methods such as {@link #digest(byte[])} and {@link #digestAsHex(File)}.
      *
      * @param name the name of the {@link MessageDigest} to use
