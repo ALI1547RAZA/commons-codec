@@ -160,8 +160,13 @@ public class Charsets {
         return charset == null ? Charset.defaultCharset() : Charset.forName(charset);
     }
 
-
-    private Charsets() {
+    /**
+     * TODO Make private in 2.0.
+     *
+     * @deprecated TODO Make private in 2.0.
+     */
+    @Deprecated
+    public Charsets() {
         // empty
     }
 }
