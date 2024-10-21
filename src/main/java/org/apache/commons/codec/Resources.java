@@ -46,7 +46,7 @@ public class Resources {
      * @deprecated TODO Make private in 2.0.
      */
     @Deprecated
-    public Resources() {
+    private Resources() {
         // empty
     }
 }
