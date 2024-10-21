@@ -199,23 +199,23 @@ public class RefinedSoundex implements StringEncoder {
         final StringBuilder sBuf = new StringBuilder();
         sBuf.append(str.charAt(0));
 
-        char last, current;
-        last = '*';
+        char last = '*'; // Declare 'last' and initialize it.
+        char current;    // Declare 'current' on a separate line.
 
         for (int i = 0; i < str.length(); i++) {
+            current = getMappingCode(str.charAt(i)); // Initialize 'current' inside the loop.
 
-            current = getMappingCode(str.charAt(i));
             if (current == last) {
                 continue;
             }
+
             if (current != 0) {
                 sBuf.append(current);
             }
 
-            last = current;
-
+            last = current; // Update 'last' at the end of the loop.
         }
 
         return sBuf.toString();
     }
-}
+
