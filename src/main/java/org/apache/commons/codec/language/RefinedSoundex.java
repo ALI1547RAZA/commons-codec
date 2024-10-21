@@ -218,4 +218,5 @@ public class RefinedSoundex implements StringEncoder {
 
         return sBuf.toString();
     }
+}
 
