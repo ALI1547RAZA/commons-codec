@@ -74,7 +74,6 @@ public final class HmacUtils {
      *             when a {@link NoSuchAlgorithmException} is caught or key is null or key is invalid.
      * @deprecated (1.11) Use {@code getInitializedMac(HmacAlgorithms.HMAC_MD5, byte[])}
      */
-    @Deprecated
     public static Mac getHmacMd5(final byte[] key) {
         return getInitializedMac(HmacAlgorithms.HMAC_MD5, key);
     }
