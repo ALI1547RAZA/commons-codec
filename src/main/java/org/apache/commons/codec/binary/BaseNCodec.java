@@ -169,8 +169,7 @@ public abstract class BaseNCodec implements BinaryEncoder, BinaryDecoder {
 
     /**
      * Holds thread context so classes can be thread-safe.
-     *
-     * This class is not itself thread-safe; each thread must allocate its own copy.
+          * This class is not itself thread-safe; each thread must allocate its own copy.
      */
     static class Context {
 
@@ -503,8 +502,7 @@ public abstract class BaseNCodec implements BinaryEncoder, BinaryDecoder {
     }
 
     /**
-     * Tests a given byte array to see if it contains any characters within the alphabet or PAD.
-     *
+     * Tests a given byte array to see if it contains any characters within the alphabet or PAD.*
      * Intended for use in checking line-ending arrays
      *
      * @param arrayOctet
