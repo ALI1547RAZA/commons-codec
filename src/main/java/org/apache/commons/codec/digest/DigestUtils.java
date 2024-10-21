@@ -1142,7 +1142,7 @@ public class DigestUtils {
      * @return SHA-512/256 digest as a hexadecimal string
      * @since 1.14
      */
-    public static String sha512_256Hex(final byte[] data) {
+    public static String sha512256Hex(final byte[] data) {
         return Hex.encodeHexString(sha512_256(data));
     }
 
