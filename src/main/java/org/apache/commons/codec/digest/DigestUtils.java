@@ -1120,7 +1120,7 @@ public class DigestUtils {
      * @throws IOException On error reading from the stream
      * @since 1.14
      */
-    public static byte[] sha512_256(final InputStream data) throws IOException {
+    public static byte[] sha512256(final InputStream data) throws IOException {
         return digest(getSha512256Digest(), data);
     }
 
@@ -1155,7 +1155,7 @@ public class DigestUtils {
      * @since 1.14
      */
     public static String sha512_256Hex(final InputStream data) throws IOException {
-        return Hex.encodeHexString(sha512_256(data));
+        return Hex.encodeHexString(sha512256(data));
     }
 
     /**
