@@ -347,7 +347,6 @@ public abstract class BaseNCodec implements BinaryEncoder, BinaryDecoder {
      * @see Character#isWhitespace(int)
      * @deprecated Use {@link Character#isWhitespace(int)}.
      */
-    @Deprecated
     protected static boolean isWhiteSpace(final byte byteToCheck) {
         return Character.isWhitespace(byteToCheck);
     }
@@ -692,8 +691,7 @@ public abstract class BaseNCodec implements BinaryEncoder, BinaryDecoder {
      * {@link IllegalArgumentException} if trailing bits are not part of a valid encoding. Decoding will compose
      * trailing bits into 8-bit bytes and discard the remainder.
      * </p>
-     *
-     * @return true if using strict decoding
+     * @return  if using strict decoding
      * @since 1.15
      */
     public CodecPolicy getCodecPolicy() {

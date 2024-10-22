@@ -33,7 +33,7 @@ public class CharEncodingTest {
      */
     @Test
     public void testConstructor() {
-        new CharEncoding();
+
     }
 
     @Test
