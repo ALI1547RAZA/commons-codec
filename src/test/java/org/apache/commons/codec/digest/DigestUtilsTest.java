@@ -479,10 +479,10 @@ public class DigestUtilsTest {
         //
         assertEquals(resultString, DigestUtils.sha512256Hex(bytesInput));
         assertEquals(resultString, DigestUtils.sha512256Hex(new ByteArrayInputStream(bytesInput)));
-        assertEquals(resultString, DigestUtils.sha512_256Hex(stringInput));
+        assertEquals(resultString, DigestUtils.sha512256Hex(stringInput));
         // Example 2
         assertEquals("3928E184FB8690F840DA3988121D31BE65CB9D3EF83EE6146FEAC861E19B563A".toLowerCase(Locale.ROOT),
-                DigestUtils.sha512_256Hex("abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmnhijklmnoijklmnopjklmnopqklmnopqrlmnopqrsmnopqrstnopqrstu"));
+                DigestUtils.sha512256Hex("abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmnhijklmnoijklmnopjklmnopqklmnopqrlmnopqrsmnopqrstnopqrstu"));
     }
 
     @Test
