@@ -836,7 +836,7 @@ public class DigestUtils {
      * @return SHA3-384 digest as a hexadecimal string
      * @since 1.12
      */
-    public static String sha3_384Hex(final byte[] data) {
+    public static String sha3384Hex(final byte[] data) {
         return Hex.encodeHexString(sha3384(data));
     }
 
@@ -848,7 +848,7 @@ public class DigestUtils {
      * @throws IOException On error reading from the stream
      * @since 1.12
      */
-    public static String sha3_384Hex(final InputStream data) throws IOException {
+    public static String sha3384Hex(final InputStream data) throws IOException {
         return Hex.encodeHexString(sha3384(data));
     }
 
