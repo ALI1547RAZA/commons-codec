@@ -723,7 +723,7 @@ public class DigestUtils {
      * @return SHA3-224 digest as a hexadecimal string
      * @since 1.12
      */
-    public static String sha3_224Hex(final String data) {
+    public static String sha3224Hex(final String data) {
         return Hex.encodeHexString(sha3224(data));
     }
 
@@ -734,7 +734,7 @@ public class DigestUtils {
      * @return SHA3-256 digest
      * @since 1.12
      */
-    public static byte[] sha3_256(final byte[] data) {
+    public static byte[] sha3256(final byte[] data) {
         return getSha3256Digest().digest(data);
     }
 
@@ -746,7 +746,7 @@ public class DigestUtils {
      * @throws IOException On error reading from the stream
      * @since 1.12
      */
-    public static byte[] sha3_256(final InputStream data) throws IOException {
+    public static byte[] sha3256(final InputStream data) throws IOException {
         return digest(getSha3256Digest(), data);
     }
 
@@ -757,8 +757,8 @@ public class DigestUtils {
      * @return SHA3-256 digest
      * @since 1.12
      */
-    public static byte[] sha3_256(final String data) {
-        return sha3_256(StringUtils.getBytesUtf8(data));
+    public static byte[] sha3256(final String data) {
+        return sha3256(StringUtils.getBytesUtf8(data));
     }
 
     /**
@@ -768,8 +768,8 @@ public class DigestUtils {
      * @return SHA3-256 digest as a hexadecimal string
      * @since 1.12
      */
-    public static String sha3_256Hex(final byte[] data) {
-        return Hex.encodeHexString(sha3_256(data));
+    public static String sha3256Hex(final byte[] data) {
+        return Hex.encodeHexString(sha3256(data));
     }
 
     /**
@@ -781,7 +781,7 @@ public class DigestUtils {
      * @since 1.12
      */
     public static String sha3_256Hex(final InputStream data) throws IOException {
-        return Hex.encodeHexString(sha3_256(data));
+        return Hex.encodeHexString(sha3256(data));
     }
 
     /**
@@ -792,7 +792,7 @@ public class DigestUtils {
      * @since 1.12
      */
     public static String sha3_256Hex(final String data) {
-        return Hex.encodeHexString(sha3_256(data));
+        return Hex.encodeHexString(sha3256(data));
     }
 
     /**

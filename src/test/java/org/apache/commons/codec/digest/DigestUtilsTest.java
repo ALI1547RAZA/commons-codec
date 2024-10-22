@@ -359,7 +359,7 @@ public class DigestUtilsTest {
         // Examples from https://csrc.nist.gov/projects/cryptographic-standards-and-guidelines/example-values
         //
         // https://csrc.nist.gov/CSRC/media/Projects/Cryptographic-Standards-and-Guidelines/documents/examples/SHA3-224_Msg0.pdf
-        assertEquals("6b4e03423667dbb73b6e15454f0eb1abd4597f9a1b078e3f5b5a6bc7", DigestUtils.sha3_224Hex(EMPTY_STRING));
+        assertEquals("6b4e03423667dbb73b6e15454f0eb1abd4597f9a1b078e3f5b5a6bc7", DigestUtils.sha3224Hex(EMPTY_STRING));
     }
 
     @Test
@@ -380,7 +380,7 @@ public class DigestUtilsTest {
     @Test
     public void testSha3_256HexInputStream() throws IOException {
         assumeJava9();
-        assertEquals(DigestUtils.sha3_256Hex(testData), DigestUtils.sha3_256Hex(new ByteArrayInputStream(testData)));
+        assertEquals(DigestUtils.sha3256Hex(testData), DigestUtils.sha3_256Hex(new ByteArrayInputStream(testData)));
     }
 
     @Test
