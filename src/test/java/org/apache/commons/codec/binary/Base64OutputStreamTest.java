@@ -272,11 +272,11 @@ public class Base64OutputStreamTest {
     @Test
     public void testCodec98NPE() throws Exception {
         final byte[] codec98 = StringUtils.getBytesUtf8(Base64TestData.CODEC_98_NPE);
-        final byte[] codec98_1024 = new byte[1024];
-        System.arraycopy(codec98, 0, codec98_1024, 0, codec98.length);
+        final byte[] codec981024 = new byte[1024];
+        System.arraycopy(codec98, 0, codec981024, 0, codec98.length);
         final ByteArrayOutputStream data = new ByteArrayOutputStream(1024);
         try (final Base64OutputStream stream = new Base64OutputStream(data, false)) {
-            stream.write(codec98_1024, 0, 1024);
+            stream.write(codec981024, 0, 1024);
         }
 
         final byte[] decodedBytes = data.toByteArray();
