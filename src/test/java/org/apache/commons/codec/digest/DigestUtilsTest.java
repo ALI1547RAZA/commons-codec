@@ -405,13 +405,13 @@ public class DigestUtilsTest {
         //
         // https://csrc.nist.gov/CSRC/media/Projects/Cryptographic-Standards-and-Guidelines/documents/examples/SHA3-512_Msg0.pdf
         assertEquals("a69f73cca23a9ac5c8b567dc185a756e97c982164fe25859e0d1dcc1475c80a615b2123af1f5f94c11e3e9402c3ac558f500199d95b6d3e301758586281dcd26",
-                DigestUtils.sha3_512Hex(EMPTY_STRING));
+                DigestUtils.sha3512Hex(EMPTY_STRING));
     }
 
     @Test
     public void testSha3_512HexInputStream() throws IOException {
         assumeJava9();
-        assertEquals(DigestUtils.sha3512Hex(testData), DigestUtils.sha3_512Hex(new ByteArrayInputStream(testData)));
+        assertEquals(DigestUtils.sha3512Hex(testData), DigestUtils.sha3512Hex(new ByteArrayInputStream(testData)));
     }
 
     @Test
