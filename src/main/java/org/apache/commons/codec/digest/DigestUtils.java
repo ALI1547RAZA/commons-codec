@@ -259,7 +259,7 @@ public class DigestUtils {
      * @see MessageDigestAlgorithms#SHA3_256
      * @since 1.12
      */
-    public static MessageDigest getSha3_256Digest() {
+    public static MessageDigest getSha3256Digest() {
         return getDigest(MessageDigestAlgorithms.SHA3_256);
     }
 
@@ -735,7 +735,7 @@ public class DigestUtils {
      * @since 1.12
      */
     public static byte[] sha3_256(final byte[] data) {
-        return getSha3_256Digest().digest(data);
+        return getSha3256Digest().digest(data);
     }
 
     /**
@@ -747,7 +747,7 @@ public class DigestUtils {
      * @since 1.12
      */
     public static byte[] sha3_256(final InputStream data) throws IOException {
-        return digest(getSha3_256Digest(), data);
+        return digest(getSha3256Digest(), data);
     }
 
     /**
