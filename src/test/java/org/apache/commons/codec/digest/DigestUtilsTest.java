@@ -389,7 +389,7 @@ public class DigestUtilsTest {
         // Examples from https://csrc.nist.gov/projects/cryptographic-standards-and-guidelines/example-values
         //
         // https://csrc.nist.gov/CSRC/media/Projects/Cryptographic-Standards-and-Guidelines/documents/examples/SHA3-384_Msg0.pdf
-        assertEquals("0c63a75b845e4f7d01107d852e4c2485c51a50aaaa94fc61995e71bbee983a2ac3713831264adb47fb6bd1e058d5f004", DigestUtils.sha3_384Hex(EMPTY_STRING));
+        assertEquals("0c63a75b845e4f7d01107d852e4c2485c51a50aaaa94fc61995e71bbee983a2ac3713831264adb47fb6bd1e058d5f004", DigestUtils.sha3384Hex(EMPTY_STRING));
     }
 
     @Test
