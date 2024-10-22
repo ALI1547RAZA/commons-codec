@@ -882,7 +882,7 @@ public class DigestUtils {
      * @throws IOException On error reading from the stream
      * @since 1.12
      */
-    public static byte[] sha3_512(final InputStream data) throws IOException {
+    public static byte[] sha3512(final InputStream data) throws IOException {
         return digest(getSha3512Digest(), data);
     }
 
@@ -893,7 +893,7 @@ public class DigestUtils {
      * @return SHA3-512 digest
      * @since 1.12
      */
-    public static byte[] sha3_512(final String data) {
+    public static byte[] sha3512(final String data) {
         return sha3512(StringUtils.getBytesUtf8(data));
     }
 
@@ -917,7 +917,7 @@ public class DigestUtils {
      * @since 1.12
      */
     public static String sha3_512Hex(final InputStream data) throws IOException {
-        return Hex.encodeHexString(sha3_512(data));
+        return Hex.encodeHexString(sha3512(data));
     }
 
     /**
@@ -928,7 +928,7 @@ public class DigestUtils {
      * @since 1.12
      */
     public static String sha3_512Hex(final String data) {
-        return Hex.encodeHexString(sha3_512(data));
+        return Hex.encodeHexString(sha3512(data));
     }
 
     /**
