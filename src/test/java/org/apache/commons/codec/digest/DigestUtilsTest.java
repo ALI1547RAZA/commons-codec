@@ -452,7 +452,7 @@ public class DigestUtilsTest {
         final byte[] resultBytes = Hex.decodeHex(resultString);
         //
         assertArrayEquals(resultBytes, DigestUtils.sha512224(bytesInput));
-        assertArrayEquals(resultBytes, DigestUtils.sha512_224(new ByteArrayInputStream(bytesInput)));
+        assertArrayEquals(resultBytes, DigestUtils.sha512224(new ByteArrayInputStream(bytesInput)));
         assertArrayEquals(resultBytes, DigestUtils.sha512_224(stringInput));
         //
         assertEquals(resultString, DigestUtils.sha512_224Hex(bytesInput));
