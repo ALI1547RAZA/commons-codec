@@ -473,7 +473,7 @@ public class DigestUtilsTest {
         final String resultString = "53048E2681941EF99B2E29B76B4C7DABE4C2D0C634FC6D46E0E2F13107E7AF23".toLowerCase(Locale.ROOT);
         final byte[] resultBytes = Hex.decodeHex(resultString);
         //
-        assertArrayEquals(resultBytes, DigestUtils.sha512_256(bytesInput));
+        assertArrayEquals(resultBytes, DigestUtils.sha512256(bytesInput));
         assertArrayEquals(resultBytes, DigestUtils.sha512_256(new ByteArrayInputStream(bytesInput)));
         assertArrayEquals(resultBytes, DigestUtils.sha512_256(stringInput));
         //

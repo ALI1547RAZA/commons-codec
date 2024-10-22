@@ -1108,7 +1108,7 @@ public class DigestUtils {
      * @return SHA-512/256 digest
      * @since 1.14
      */
-    public static byte[] sha512_256(final byte[] data) {
+    public static byte[] sha512256(final byte[] data) {
         return getSha512256Digest().digest(data);
     }
 
@@ -1132,7 +1132,7 @@ public class DigestUtils {
      * @since 1.14
      */
     public static byte[] sha512_256(final String data) {
-        return sha512_256(StringUtils.getBytesUtf8(data));
+        return sha512256(StringUtils.getBytesUtf8(data));
     }
 
     /**
@@ -1143,7 +1143,7 @@ public class DigestUtils {
      * @since 1.14
      */
     public static String sha512256Hex(final byte[] data) {
-        return Hex.encodeHexString(sha512_256(data));
+        return Hex.encodeHexString(sha512256(data));
     }
 
     /**
