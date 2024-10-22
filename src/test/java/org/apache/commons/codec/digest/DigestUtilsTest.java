@@ -478,7 +478,7 @@ public class DigestUtilsTest {
         assertArrayEquals(resultBytes, DigestUtils.sha512256(stringInput));
         //
         assertEquals(resultString, DigestUtils.sha512256Hex(bytesInput));
-        assertEquals(resultString, DigestUtils.sha512_256Hex(new ByteArrayInputStream(bytesInput)));
+        assertEquals(resultString, DigestUtils.sha512256Hex(new ByteArrayInputStream(bytesInput)));
         assertEquals(resultString, DigestUtils.sha512_256Hex(stringInput));
         // Example 2
         assertEquals("3928E184FB8690F840DA3988121D31BE65CB9D3EF83EE6146FEAC861E19B563A".toLowerCase(Locale.ROOT),
