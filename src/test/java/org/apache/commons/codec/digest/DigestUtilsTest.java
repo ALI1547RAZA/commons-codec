@@ -411,7 +411,7 @@ public class DigestUtilsTest {
     @Test
     public void testSha3_512HexInputStream() throws IOException {
         assumeJava9();
-        assertEquals(DigestUtils.sha3_512Hex(testData), DigestUtils.sha3_512Hex(new ByteArrayInputStream(testData)));
+        assertEquals(DigestUtils.sha3512Hex(testData), DigestUtils.sha3_512Hex(new ByteArrayInputStream(testData)));
     }
 
     @Test

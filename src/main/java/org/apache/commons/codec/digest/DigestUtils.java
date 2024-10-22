@@ -904,7 +904,7 @@ public class DigestUtils {
      * @return SHA3-512 digest as a hexadecimal string
      * @since 1.12
      */
-    public static String sha3_512Hex(final byte[] data) {
+    public static String sha3512Hex(final byte[] data) {
         return Hex.encodeHexString(sha3512(data));
     }
 
