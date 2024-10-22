@@ -271,7 +271,7 @@ public class DigestUtils {
      * @see MessageDigestAlgorithms#SHA3_384
      * @since 1.12
      */
-    public static MessageDigest getSha3_384Digest() {
+    public static MessageDigest getSha3384Digest() {
         return getDigest(MessageDigestAlgorithms.SHA3_384);
     }
 
@@ -283,7 +283,7 @@ public class DigestUtils {
      * @see MessageDigestAlgorithms#SHA3_512
      * @since 1.12
      */
-    public static MessageDigest getSha3_512Digest() {
+    public static MessageDigest getSha3512Digest() {
         return getDigest(MessageDigestAlgorithms.SHA3_512);
     }
 
@@ -305,7 +305,7 @@ public class DigestUtils {
      * @throws IllegalArgumentException when a {@link NoSuchAlgorithmException} is caught.
      * @see MessageDigestAlgorithms#SHA_512_224
      */
-    public static MessageDigest getSha512_224Digest() {
+    public static MessageDigest getSha512224Digest() {
         return getDigest(MessageDigestAlgorithms.SHA_512_224);
     }
 
@@ -316,7 +316,7 @@ public class DigestUtils {
      * @throws IllegalArgumentException when a {@link NoSuchAlgorithmException} is caught.
      * @see MessageDigestAlgorithms#SHA_512_224
      */
-    public static MessageDigest getSha512_256Digest() {
+    public static MessageDigest getSha512256Digest() {
         return getDigest(MessageDigestAlgorithms.SHA_512_256);
     }
 
@@ -666,7 +666,7 @@ public class DigestUtils {
      * @return SHA3-224 digest
      * @since 1.12
      */
-    public static byte[] sha3_224(final byte[] data) {
+    public static byte[] sha3224(final byte[] data) {
         return getSha3224Digest().digest(data);
     }
 
@@ -678,7 +678,7 @@ public class DigestUtils {
      * @throws IOException On error reading from the stream
      * @since 1.12
      */
-    public static byte[] sha3_224(final InputStream data) throws IOException {
+    public static byte[] sha3224(final InputStream data) throws IOException {
         return digest(getSha3224Digest(), data);
     }
 
@@ -689,8 +689,8 @@ public class DigestUtils {
      * @return SHA3-224 digest
      * @since 1.12
      */
-    public static byte[] sha3_224(final String data) {
-        return sha3_224(StringUtils.getBytesUtf8(data));
+    public static byte[] sha3224(final String data) {
+        return sha3224(StringUtils.getBytesUtf8(data));
     }
 
     /**
@@ -700,8 +700,8 @@ public class DigestUtils {
      * @return SHA3-224 digest as a hexadecimal string
      * @since 1.12
      */
-    public static String sha3_224Hex(final byte[] data) {
-        return Hex.encodeHexString(sha3_224(data));
+    public static String sha3224Hex(final byte[] data) {
+        return Hex.encodeHexString(sha3224(data));
     }
 
     /**
@@ -712,8 +712,8 @@ public class DigestUtils {
      * @throws IOException On error reading from the stream
      * @since 1.12
      */
-    public static String sha3_224Hex(final InputStream data) throws IOException {
-        return Hex.encodeHexString(sha3_224(data));
+    public static String sha3224Hex(final InputStream data) throws IOException {
+        return Hex.encodeHexString(sha3224(data));
     }
 
     /**
@@ -724,7 +724,7 @@ public class DigestUtils {
      * @since 1.12
      */
     public static String sha3_224Hex(final String data) {
-        return Hex.encodeHexString(sha3_224(data));
+        return Hex.encodeHexString(sha3224(data));
     }
 
     /**
@@ -803,7 +803,7 @@ public class DigestUtils {
      * @since 1.12
      */
     public static byte[] sha3_384(final byte[] data) {
-        return getSha3_384Digest().digest(data);
+        return getSha3384Digest().digest(data);
     }
 
     /**
@@ -815,7 +815,7 @@ public class DigestUtils {
      * @since 1.12
      */
     public static byte[] sha3_384(final InputStream data) throws IOException {
-        return digest(getSha3_384Digest(), data);
+        return digest(getSha3384Digest(), data);
     }
 
     /**
@@ -871,7 +871,7 @@ public class DigestUtils {
      * @since 1.12
      */
     public static byte[] sha3_512(final byte[] data) {
-        return getSha3_512Digest().digest(data);
+        return getSha3512Digest().digest(data);
     }
 
     /**
@@ -883,7 +883,7 @@ public class DigestUtils {
      * @since 1.12
      */
     public static byte[] sha3_512(final InputStream data) throws IOException {
-        return digest(getSha3_512Digest(), data);
+        return digest(getSha3512Digest(), data);
     }
 
     /**
@@ -1041,7 +1041,7 @@ public class DigestUtils {
      * @since 1.14
      */
     public static byte[] sha512_224(final byte[] data) {
-        return getSha512_224Digest().digest(data);
+        return getSha512224Digest().digest(data);
     }
 
     /**
@@ -1053,7 +1053,7 @@ public class DigestUtils {
      * @since 1.14
      */
     public static byte[] sha512_224(final InputStream data) throws IOException {
-        return digest(getSha512_224Digest(), data);
+        return digest(getSha512224Digest(), data);
     }
 
     /**
@@ -1109,7 +1109,7 @@ public class DigestUtils {
      * @since 1.14
      */
     public static byte[] sha512_256(final byte[] data) {
-        return getSha512_256Digest().digest(data);
+        return getSha512256Digest().digest(data);
     }
 
     /**
@@ -1121,7 +1121,7 @@ public class DigestUtils {
      * @since 1.14
      */
     public static byte[] sha512_256(final InputStream data) throws IOException {
-        return digest(getSha512_256Digest(), data);
+        return digest(getSha512256Digest(), data);
     }
 
     /**
