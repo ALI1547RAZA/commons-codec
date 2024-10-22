@@ -780,7 +780,7 @@ public class DigestUtils {
      * @throws IOException On error reading from the stream
      * @since 1.12
      */
-    public static String sha3_256Hex(final InputStream data) throws IOException {
+    public static String sha3256Hex(final InputStream data) throws IOException {
         return Hex.encodeHexString(sha3256(data));
     }
 
@@ -791,7 +791,7 @@ public class DigestUtils {
      * @return SHA3-256 digest as a hexadecimal string
      * @since 1.12
      */
-    public static String sha3_256Hex(final String data) {
+    public static String sha3256Hex(final String data) {
         return Hex.encodeHexString(sha3256(data));
     }
 
@@ -802,7 +802,7 @@ public class DigestUtils {
      * @return SHA3-384 digest
      * @since 1.12
      */
-    public static byte[] sha3_384(final byte[] data) {
+    public static byte[] sha3384(final byte[] data) {
         return getSha3384Digest().digest(data);
     }
 
@@ -814,7 +814,7 @@ public class DigestUtils {
      * @throws IOException On error reading from the stream
      * @since 1.12
      */
-    public static byte[] sha3_384(final InputStream data) throws IOException {
+    public static byte[] sha3384(final InputStream data) throws IOException {
         return digest(getSha3384Digest(), data);
     }
 
@@ -825,8 +825,8 @@ public class DigestUtils {
      * @return SHA3-384 digest
      * @since 1.12
      */
-    public static byte[] sha3_384(final String data) {
-        return sha3_384(StringUtils.getBytesUtf8(data));
+    public static byte[] sha3384(final String data) {
+        return sha3384(StringUtils.getBytesUtf8(data));
     }
 
     /**
@@ -837,7 +837,7 @@ public class DigestUtils {
      * @since 1.12
      */
     public static String sha3_384Hex(final byte[] data) {
-        return Hex.encodeHexString(sha3_384(data));
+        return Hex.encodeHexString(sha3384(data));
     }
 
     /**
@@ -849,7 +849,7 @@ public class DigestUtils {
      * @since 1.12
      */
     public static String sha3_384Hex(final InputStream data) throws IOException {
-        return Hex.encodeHexString(sha3_384(data));
+        return Hex.encodeHexString(sha3384(data));
     }
 
     /**
@@ -860,7 +860,7 @@ public class DigestUtils {
      * @since 1.12
      */
     public static String sha3_384Hex(final String data) {
-        return Hex.encodeHexString(sha3_384(data));
+        return Hex.encodeHexString(sha3384(data));
     }
 
     /**
