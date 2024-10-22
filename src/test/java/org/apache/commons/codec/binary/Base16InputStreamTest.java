@@ -46,7 +46,7 @@ public class Base16InputStreamTest {
      */
     @Test
     public void testAvailable() throws IOException {
-        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso8859_1(ENCODED_B16));
+        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso88591(ENCODED_B16));
         try (final Base16InputStream b16Stream = new Base16InputStream(ins)) {
             assertEquals(1, b16Stream.available());
             assertEquals(6, b16Stream.skip(10));
@@ -331,7 +331,7 @@ public class Base16InputStreamTest {
      */
     @Test
     public void testSkipBig() throws IOException {
-        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso8859_1(ENCODED_B16));
+        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso88591(ENCODED_B16));
         try (final Base16InputStream b16Stream = new Base16InputStream(ins)) {
             assertEquals(6, b16Stream.skip(Integer.MAX_VALUE));
             // End of stream reached
@@ -347,7 +347,7 @@ public class Base16InputStreamTest {
      */
     @Test
     public void testSkipNone() throws IOException {
-        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso8859_1(ENCODED_B16));
+        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso88591(ENCODED_B16));
         try (final Base16InputStream b16Stream = new Base16InputStream(ins)) {
             final byte[] actualBytes = new byte[6];
             assertEquals(0, b16Stream.skip(0));
@@ -365,7 +365,7 @@ public class Base16InputStreamTest {
      */
     @Test
     public void testSkipPastEnd() throws IOException {
-        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso8859_1(ENCODED_B16));
+        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso88591(ENCODED_B16));
         try (final Base16InputStream b16Stream = new Base16InputStream(ins)) {
             // due to CODEC-130, skip now skips correctly decoded characters rather than encoded
             assertEquals(6, b16Stream.skip(10));
@@ -382,7 +382,7 @@ public class Base16InputStreamTest {
      */
     @Test
     public void testSkipToEnd() throws IOException {
-        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso8859_1(ENCODED_B16));
+        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso88591(ENCODED_B16));
         try (final Base16InputStream b16Stream = new Base16InputStream(ins)) {
             // due to CODEC-130, skip now skips correctly decoded characters rather than encoded
             assertEquals(6, b16Stream.skip(6));
@@ -399,7 +399,7 @@ public class Base16InputStreamTest {
      */
     @Test
     public void testSkipWrongArgument() throws IOException {
-        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso8859_1(ENCODED_B16));
+        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso88591(ENCODED_B16));
         try (final Base16InputStream b16Stream = new Base16InputStream(ins)) {
             assertThrows(IllegalArgumentException.class, () -> b16Stream.skip(-10));
         }

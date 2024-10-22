@@ -96,7 +96,7 @@ public class StringUtilsTest {
         final String charsetName = StandardCharsets.ISO_8859_1.name();
         testGetBytesUnchecked(charsetName);
         final byte[] expected = STRING_FIXTURE.getBytes(charsetName);
-        final byte[] actual = StringUtils.getBytesIso8859_1(STRING_FIXTURE);
+        final byte[] actual = StringUtils.getBytesIso88591(STRING_FIXTURE);
         assertArrayEquals(expected, actual);
     }
 
@@ -177,7 +177,7 @@ public class StringUtilsTest {
         final String charsetName = StandardCharsets.ISO_8859_1.name();
         testNewString(charsetName);
         final String expected = new String(BYTES_FIXTURE, charsetName);
-        final String actual = StringUtils.newStringIso8859_1(BYTES_FIXTURE);
+        final String actual = StringUtils.newStringIso88591(BYTES_FIXTURE);
         assertEquals(expected, actual);
     }
 
@@ -189,7 +189,7 @@ public class StringUtilsTest {
     @Test
     public void testNewStringNullInput_CODEC229() {
         assertNull(StringUtils.newStringUtf8(null));
-        assertNull(StringUtils.newStringIso8859_1(null));
+        assertNull(StringUtils.newStringIso88591(null));
         assertNull(StringUtils.newStringUsAscii(null));
         assertNull(StringUtils.newStringUtf16(null));
         assertNull(StringUtils.newStringUtf16Be(null));

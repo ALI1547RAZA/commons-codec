@@ -57,7 +57,7 @@ public class Base64InputStreamTest {
      */
     @Test
     public void testAvailable() throws Throwable {
-        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso8859_1(ENCODED_B64));
+        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso88591(ENCODED_B64));
         try (final Base64InputStream b64stream = new Base64InputStream(ins)) {
             assertEquals(1, b64stream.available());
             assertEquals(6, b64stream.skip(10));
@@ -483,7 +483,7 @@ public class Base64InputStreamTest {
      */
     @Test
     public void testSkipBig() throws Throwable {
-        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso8859_1(ENCODED_B64));
+        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso88591(ENCODED_B64));
         try (final Base64InputStream b64stream = new Base64InputStream(ins)) {
             assertEquals(6, b64stream.skip(Integer.MAX_VALUE));
             // End of stream reached
@@ -500,7 +500,7 @@ public class Base64InputStreamTest {
      */
     @Test
     public void testSkipNone() throws Throwable {
-        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso8859_1(ENCODED_B64));
+        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso88591(ENCODED_B64));
         try (final Base64InputStream b64stream = new Base64InputStream(ins)) {
             final byte[] actualBytes = new byte[6];
             assertEquals(0, b64stream.skip(0));
@@ -519,7 +519,7 @@ public class Base64InputStreamTest {
      */
     @Test
     public void testSkipPastEnd() throws Throwable {
-        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso8859_1(ENCODED_B64));
+        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso88591(ENCODED_B64));
         try (final Base64InputStream b64stream = new Base64InputStream(ins)) {
             // due to CODEC-130, skip now skips correctly decoded characters rather than encoded
             assertEquals(6, b64stream.skip(10));
@@ -537,7 +537,7 @@ public class Base64InputStreamTest {
      */
     @Test
     public void testSkipToEnd() throws Throwable {
-        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso8859_1(ENCODED_B64));
+        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso88591(ENCODED_B64));
         try (final Base64InputStream b64stream = new Base64InputStream(ins)) {
             // due to CODEC-130, skip now skips correctly decoded characters rather than encoded
             assertEquals(6, b64stream.skip(6));
@@ -555,7 +555,7 @@ public class Base64InputStreamTest {
      */
     @Test
     public void testSkipWrongArgument() throws Throwable {
-        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso8859_1(ENCODED_B64));
+        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso88591(ENCODED_B64));
         try (final Base64InputStream b64stream = new Base64InputStream(ins)) {
             assertThrows(IllegalArgumentException.class, () -> b64stream.skip(-10));
         }

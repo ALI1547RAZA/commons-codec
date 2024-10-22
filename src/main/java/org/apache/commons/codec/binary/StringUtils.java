@@ -141,7 +141,7 @@ public class StringUtils {
      * @see Charset
      * @see #getBytesUnchecked(String, String)
      */
-    public static byte[] getBytesIso8859_1(final String string) {
+    public static byte[] getBytesIso88591(final String string) {
         return getBytes(string, StandardCharsets.ISO_8859_1);
     }
 
@@ -328,7 +328,7 @@ public class StringUtils {
      *             since it is required by the Java platform specification.
      * @since As of 1.7, throws {@link NullPointerException} instead of UnsupportedEncodingException
      */
-    public static String newStringIso8859_1(final byte[] bytes) {
+    public static String newStringIso88591(final byte[] bytes) {
         return newString(bytes, StandardCharsets.ISO_8859_1);
     }
 

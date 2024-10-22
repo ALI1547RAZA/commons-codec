@@ -49,7 +49,7 @@ public class Base32InputStreamTest {
      */
     @Test
     public void testAvailable() throws Throwable {
-        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso8859_1(ENCODED_FOO));
+        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso88591(ENCODED_FOO));
         try (final Base32InputStream b32stream = new Base32InputStream(ins)) {
             assertEquals(1, b32stream.available());
             assertEquals(3, b32stream.skip(10));
@@ -448,7 +448,7 @@ public class Base32InputStreamTest {
      */
     @Test
     public void testSkipBig() throws Throwable {
-        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso8859_1(ENCODED_FOO));
+        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso88591(ENCODED_FOO));
         try (final Base32InputStream b32stream = new Base32InputStream(ins)) {
             assertEquals(3, b32stream.skip(1024));
             // End of stream reached
@@ -465,7 +465,7 @@ public class Base32InputStreamTest {
      */
     @Test
     public void testSkipNone() throws Throwable {
-        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso8859_1(ENCODED_FOO));
+        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso88591(ENCODED_FOO));
         try (final Base32InputStream b32stream = new Base32InputStream(ins)) {
             final byte[] actualBytes = new byte[6];
             assertEquals(0, b32stream.skip(0));
@@ -484,7 +484,7 @@ public class Base32InputStreamTest {
      */
     @Test
     public void testSkipPastEnd() throws Throwable {
-        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso8859_1(ENCODED_FOO));
+        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso88591(ENCODED_FOO));
         try (final Base32InputStream b32stream = new Base32InputStream(ins)) {
             // due to CODEC-130, skip now skips correctly decoded characters rather than encoded
             assertEquals(3, b32stream.skip(10));
@@ -502,7 +502,7 @@ public class Base32InputStreamTest {
      */
     @Test
     public void testSkipToEnd() throws Throwable {
-        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso8859_1(ENCODED_FOO));
+        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso88591(ENCODED_FOO));
         try (final Base32InputStream b32stream = new Base32InputStream(ins)) {
             // due to CODEC-130, skip now skips correctly decoded characters rather than encoded
             assertEquals(3, b32stream.skip(3));
@@ -520,7 +520,7 @@ public class Base32InputStreamTest {
      */
     @Test
     public void testSkipWrongArgument() throws Throwable {
-        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso8859_1(ENCODED_FOO));
+        final InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso88591(ENCODED_FOO));
         try (final Base32InputStream b32stream = new Base32InputStream(ins)) {
             assertThrows(IllegalArgumentException.class, () -> b32stream.skip(-10));
         }
