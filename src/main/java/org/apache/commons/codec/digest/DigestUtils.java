@@ -1086,7 +1086,7 @@ public class DigestUtils {
      * @throws IOException On error reading from the stream
      * @since 1.14
      */
-    public static String sha512_224Hex(final InputStream data) throws IOException {
+    public static String sha512224Hex(final InputStream data) throws IOException {
         return Hex.encodeHexString(sha512224(data));
     }
 
