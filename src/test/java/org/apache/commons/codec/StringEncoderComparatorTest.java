@@ -34,7 +34,7 @@ public class StringEncoderComparatorTest {
 
     @SuppressWarnings("unchecked") // cannot easily avoid this warning
     @Test
-    public void testComparatorWithDoubleMetaphone() throws Exception {
+    void testComparatorWithDoubleMetaphone() {
         final StringEncoderComparator sCompare = new StringEncoderComparator(new DoubleMetaphone());
 
         final String[] testArray = { "Jordan", "Sosa", "Prior", "Pryor" };
