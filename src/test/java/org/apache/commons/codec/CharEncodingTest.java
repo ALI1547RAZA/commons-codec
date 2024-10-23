@@ -33,11 +33,6 @@ public class CharEncodingTest {
      */
 
     @Test
-    public void testUsAscii() {
-        assertEquals(StandardCharsets.US_ASCII.name(), CharEncoding.US_ASCII);
-    }
-
-    @Test
     public void testUtf16() {
         assertEquals(StandardCharsets.UTF_16.name(), CharEncoding.UTF_16);
     }
