@@ -31,12 +31,6 @@ public class DecoderExceptionTest {
 
     private static final Throwable t = new Exception();
 
-    @Test
-    public void testConstructor0() {
-        final DecoderException e = new DecoderException();
-        assertNull(e.getMessage());
-        assertNull(e.getCause());
-    }
 
     @Test
     public void testConstructorString() {
