@@ -32,10 +32,10 @@ limitations under the License.
   <name>Apache Commons Codec</name>
   <inceptionYear>2002</inceptionYear>
   <description>
-     The Apache Commons Codec component contains encoders and decoders for
-     formats such as Base16, Base32, Base64, digest, and Hexadecimal. In addition to these
-     widely used encoders and decoders, the codec package also maintains a
-     collection of phonetic encoding utilities.
+    The Apache Commons Codec component contains encoders and decoders for
+    formats such as Base16, Base32, Base64, digest, and Hexadecimal. In addition to these
+    widely used encoders and decoders, the codec package also maintains a
+    collection of phonetic encoding utilities.
   </description>
   <url>https://commons.apache.org/proper/commons-codec/</url>
   <issueManagement>
@@ -113,6 +113,7 @@ limitations under the License.
     <commons.jacoco.lineRatio>0.89</commons.jacoco.lineRatio>
     <commons.jacoco.complexityRatio>0.84</commons.jacoco.complexityRatio>
   </properties>
+
   <build>
     <defaultGoal>clean verify apache-rat:check japicmp:cmp checkstyle:check javadoc:javadoc</defaultGoal>
     <pluginManagement>
@@ -136,7 +137,7 @@ limitations under the License.
             <includeTestSourceDirectory>true</includeTestSourceDirectory>
             <resourceExcludes>NOTICE.txt,LICENSE.txt,**/pom.properties,**/sha512.properties</resourceExcludes>
           </configuration>
-        </plugin>        
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
@@ -196,7 +197,9 @@ limitations under the License.
            See: https://bugs.openjdk.java.net/browse/JDK-8212233.
            To be removed with parent 49. -->
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.10.1</version> <!-- Ensure correct version -->
         <configuration>
           <source>${maven.compiler.source}</source>
         </configuration>
@@ -204,7 +207,7 @@ limitations under the License.
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>animal-sniffer-maven-plugin</artifactId>
-        <version>1.24</version>
+        <version>1.23</version>
         <configuration>
           <ignores>
             <!-- JDK9 breaks compatibility by returning ByteBuffer not Buffer -->
@@ -243,10 +246,9 @@ limitations under the License.
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
-        <version>${commons.pmd.version}</version>
+        <version>3.21.2</version>
         <configuration>
           <targetJdk>${maven.compiler.target}</targetJdk>
-          <linkXref>true</linkXref>
           <rulesets>
             <ruleset>${basedir}/src/conf/pmd.xml</ruleset>
           </rulesets>
@@ -258,15 +260,8 @@ limitations under the License.
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
-        <artifactId>taglist-maven-plugin</artifactId>
+        <artifactId>buildnumber-maven-plugin</artifactId>
         <version>3.2.1</version>
-        <configuration>
-          <tags>
-            <tag>TODO</tag>
-            <tag>NOPMD</tag>
-            <tag>NOTE</tag>
-          </tags>
-        </configuration>
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -277,11 +272,11 @@ limitations under the License.
   </reporting>
   <profiles>
     <profile>
-	  <!-- Java 8 only -->
+      <!-- Java 8 only -->
       <id>java-8</id>
       <activation>
-		<jdk>8</jdk>
-	  </activation>
+        <jdk>8</jdk>
+      </activation>
       <properties>
         <!-- JaCoCo: Don't make code coverage worse than: -->
         <commons.jacoco.haltOnFailure>true</commons.jacoco.haltOnFailure>
@@ -290,15 +285,15 @@ limitations under the License.
         <commons.jacoco.methodRatio>0.88</commons.jacoco.methodRatio>
         <commons.jacoco.branchRatio>0.92</commons.jacoco.branchRatio>
         <commons.jacoco.complexityRatio>0.88</commons.jacoco.complexityRatio>
-        <commons.jacoco.lineRatio>0.94</commons.jacoco.lineRatio>    
+        <commons.jacoco.lineRatio>0.94</commons.jacoco.lineRatio>
       </properties>
     </profile>
     <profile>
-	  <!-- Java 9 and up -->
+      <!-- Java 9 and up -->
       <id>java-9-up</id>
       <activation>
-		<jdk>[9,)</jdk>
-	  </activation>
+        <jdk>[9,)</jdk>
+      </activation>
       <properties>
         <!-- JaCoCo: Don't make code coverage worse than: -->
         <commons.jacoco.haltOnFailure>true</commons.jacoco.haltOnFailure>
@@ -307,7 +302,7 @@ limitations under the License.
         <commons.jacoco.methodRatio>0.93</commons.jacoco.methodRatio>
         <commons.jacoco.branchRatio>0.92</commons.jacoco.branchRatio>
         <commons.jacoco.complexityRatio>0.90</commons.jacoco.complexityRatio>
-        <commons.jacoco.lineRatio>0.95</commons.jacoco.lineRatio>    
+        <commons.jacoco.lineRatio>0.95</commons.jacoco.lineRatio>
       </properties>
     </profile>
   </profiles>
@@ -349,7 +344,7 @@ limitations under the License.
       <email>ggregory at apache.org</email>
       <url>https://www.garygregory.com</url>
       <organization>The Apache Software Foundation</organization>
-      <organizationUrl>https://www.apache.org/</organizationUrl>      
+      <organizationUrl>https://www.apache.org/</organizationUrl>
       <roles>
         <role>PMC Member</role>
       </roles>

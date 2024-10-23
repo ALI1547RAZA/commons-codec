@@ -35,11 +35,13 @@ import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.stream.Stream;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 /**
@@ -52,13 +54,14 @@ public class MessageDigestAlgorithmsTest {
         final Field[] fields = MessageDigestAlgorithms.class.getDeclaredFields();
         boolean ok = true;
         int psf = 0;
+
         for (final Field f : fields) {
             // Ignore cobertura instrumentation fields
             if (f.getName().contains("cobertura")) {
                 continue;
             }
 
-            // Only interested in public fields
+            // Only interested in public static final fields
             final int modifiers = f.getModifiers();
             if (Modifier.isPublic(modifiers) && Modifier.isStatic(modifiers) && Modifier.isFinal(modifiers)) {
                 psf++;
@@ -68,9 +71,11 @@ public class MessageDigestAlgorithmsTest {
                 }
             }
         }
+
         if (!ok) {
             fail("One or more entries are missing from the MessageDigestAlgorithms.values() array");
         }
+
         if (psf != MessageDigestAlgorithms.values().length) {
             fail("One or more unexpected entries found in the MessageDigestAlgorithms.values() array");
         }
@@ -85,8 +90,21 @@ public class MessageDigestAlgorithmsTest {
         return false;
     }
 
-    public static String[] data() {
-        return MessageDigestAlgorithms.values();
+    public static Stream<Arguments> data() {
+        // Retrieve the available message digest algorithms from MessageDigestAlgorithms.values()
+        String[] algorithms = MessageDigestAlgorithms.values();
+
+        // Create test cases for each algorithm with predefined OpenOption[] values
+        return Stream.of(
+                Arguments.of(algorithms[0], new OpenOption[]{StandardOpenOption.READ}), // MD2
+                Arguments.of(algorithms[1], new OpenOption[]{StandardOpenOption.READ}), // MD5
+                Arguments.of(algorithms[2], new OpenOption[]{StandardOpenOption.READ}), // SHA-1
+                Arguments.of(algorithms[3], new OpenOption[]{StandardOpenOption.READ}), // SHA-224
+                Arguments.of(algorithms[4], new OpenOption[]{StandardOpenOption.READ}), // SHA-256
+                Arguments.of(algorithms[5], new OpenOption[]{StandardOpenOption.READ}), // SHA-384
+                Arguments.of(algorithms[6], new OpenOption[]{StandardOpenOption.READ})  // SHA-512
+                // Continue to add other algorithms as needed from the array
+        );
     }
 
     private DigestUtilsTest digestUtilsTest;
@@ -173,9 +191,13 @@ public class MessageDigestAlgorithmsTest {
     @MethodSource("data")
     void testDigestPath(final String messageDigestAlgorithm, final OpenOption... options) throws IOException {
         assumeTrue(DigestUtils.isAvailable(messageDigestAlgorithm));
+        // First call
         assertArrayEquals(digestTestData(messageDigestAlgorithm), DigestUtils.digest(DigestUtils.getDigest(messageDigestAlgorithm), getTestPath(), options));
+        // Second call to compare the same result
         assertArrayEquals(digestTestData(messageDigestAlgorithm), DigestUtils.digest(DigestUtils.getDigest(messageDigestAlgorithm), getTestPath(), options));
     }
+
+
 
     @ParameterizedTest
     @MethodSource("data")
