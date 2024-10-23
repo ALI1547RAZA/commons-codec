@@ -45,7 +45,7 @@ public class CharsetsTest {
 
     @SuppressWarnings("deprecation")
     @Test
-    public void testIso8859_1() {
+    void testIso8859_1() {
         assertEquals("ISO-8859-1", Charsets.ISO_8859_1.name());
     }
 
