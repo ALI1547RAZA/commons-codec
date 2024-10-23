@@ -71,19 +71,19 @@ public class CharsetsTest {
 
     @SuppressWarnings("deprecation")
     @Test
-    public void testUtf16Be() {
+    void testUtf16Be() {
         assertEquals(StandardCharsets.UTF_16BE.name(), Charsets.UTF_16BE.name());
     }
 
     @SuppressWarnings("deprecation")
     @Test
-    public void testUtf16Le() {
+    void testUtf16Le() {
         assertEquals(StandardCharsets.UTF_16LE.name(), Charsets.UTF_16LE.name());
     }
 
     @SuppressWarnings("deprecation")
     @Test
-    public void testUtf8() {
+    void testUtf8() {
         assertEquals(StandardCharsets.UTF_8.name(), Charsets.UTF_8.name());
     }
 
