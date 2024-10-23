@@ -32,11 +32,6 @@ public class CharEncodingTest {
      * We could make the constructor private in the future, it's a matter a style.
      */
     @Test
-    public void testConstructor() {
-
-    }
-
-    @Test
     public void testIso8859_1() {
         assertEquals(StandardCharsets.ISO_8859_1.name(), CharEncoding.ISO_8859_1);
     }
