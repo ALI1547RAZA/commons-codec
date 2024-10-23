@@ -50,7 +50,7 @@ public class CharsetsTest {
     }
 
     @Test
-    public void testToCharset() {
+    void testToCharset() {
         assertEquals(Charset.defaultCharset(), Charsets.toCharset((String) null));
         assertEquals(Charset.defaultCharset(), Charsets.toCharset((Charset) null));
         assertEquals(Charset.defaultCharset(), Charsets.toCharset(Charset.defaultCharset()));
