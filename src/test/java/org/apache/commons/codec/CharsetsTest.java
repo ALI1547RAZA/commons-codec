@@ -65,7 +65,7 @@ public class CharsetsTest {
 
     @SuppressWarnings("deprecation")
     @Test
-    public void testUtf16() {
+    void testUtf16() {
         assertEquals(StandardCharsets.UTF_16.name(), Charsets.UTF_16.name());
     }
 
