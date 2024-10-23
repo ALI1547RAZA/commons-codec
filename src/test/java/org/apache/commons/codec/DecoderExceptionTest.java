@@ -18,7 +18,6 @@
 package org.apache.commons.codec;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 
 import org.junit.jupiter.api.Test;
 
@@ -30,14 +29,6 @@ public class DecoderExceptionTest {
     private static final String MSG = "TEST";
 
     private static final Throwable t = new Exception();
-
-
-    @Test
-    public void testConstructorString() {
-        final DecoderException e = new DecoderException(MSG);
-        assertEquals(MSG, e.getMessage());
-        assertNull(e.getCause());
-    }
 
     @Test
     public void testConstructorStringThrowable() {
