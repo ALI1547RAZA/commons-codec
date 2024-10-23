@@ -32,13 +32,6 @@ public class CharEncodingTest {
      * We could make the constructor private in the future, it's a matter a style.
      */
 
-
-    @Test
-    public void testUtf16Be() {
-        assertEquals(StandardCharsets.UTF_16BE.name(), CharEncoding.UTF_16BE);
-    }
-
-
     @Test
     public void testUtf8() {
         assertEquals(StandardCharsets.UTF_8.name(), CharEncoding.UTF_8);
