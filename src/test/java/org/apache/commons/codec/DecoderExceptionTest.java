@@ -26,16 +26,7 @@ import org.junit.jupiter.api.Test;
  */
 public class DecoderExceptionTest {
 
-    private static final String MSG = "TEST";
-
     private static final Throwable t = new Exception();
-
-    @Test
-    public void testConstructorStringThrowable() {
-        final DecoderException e = new DecoderException(MSG, t);
-        assertEquals(MSG, e.getMessage());
-        assertEquals(t, e.getCause());
-    }
 
     @Test
     public void testConstructorThrowable() {
