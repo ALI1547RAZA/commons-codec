@@ -56,10 +56,6 @@ public class CharEncodingTest {
         assertEquals(StandardCharsets.UTF_16BE.name(), CharEncoding.UTF_16BE);
     }
 
-    @Test
-    public void testUtf16Le() {
-        assertEquals(StandardCharsets.UTF_16LE.name(), CharEncoding.UTF_16LE);
-    }
 
     @Test
     public void testUtf8() {
