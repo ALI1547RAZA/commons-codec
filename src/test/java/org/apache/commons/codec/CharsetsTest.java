@@ -59,7 +59,7 @@ public class CharsetsTest {
 
     @SuppressWarnings("deprecation")
     @Test
-    public void testUsAscii() {
+    void testUsAscii() {
         assertEquals(StandardCharsets.US_ASCII.name(), Charsets.US_ASCII.name());
     }
 
