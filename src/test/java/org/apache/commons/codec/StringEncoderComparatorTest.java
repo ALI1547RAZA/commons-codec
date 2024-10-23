@@ -52,7 +52,7 @@ public class StringEncoderComparatorTest {
     }
 
     @Test
-    public void testComparatorWithDoubleMetaphoneAndInvalidInput() throws Exception {
+    void testComparatorWithDoubleMetaphoneAndInvalidInput() {
         final StringEncoderComparator sCompare = new StringEncoderComparator(new DoubleMetaphone());
 
         final int compare = sCompare.compare(Double.valueOf(3.0d), Long.valueOf(3));
@@ -60,7 +60,7 @@ public class StringEncoderComparatorTest {
     }
 
     @Test
-    public void testComparatorWithSoundex() throws Exception {
+    void testComparatorWithSoundex() {
         final StringEncoderComparator sCompare = new StringEncoderComparator(new Soundex());
 
         assertEquals(0, sCompare.compare("O'Brien", "O'Brian"), "O'Brien and O'Brian didn't come out with the same Soundex, something must be wrong here");
