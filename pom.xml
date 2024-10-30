@@ -359,7 +359,7 @@ limitations under the License.
         </dependencies>
         <configuration>
           <targetClasses>org.apache.commons.codec*</targetClasses>
-          <targetTests>org.apache.commons.codec</targetTests>
+          <targetTests>org.apache.commons.codec*</targetTests>
         </configuration>
       </plugin>
       <!--pi test-->
