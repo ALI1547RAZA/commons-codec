@@ -51,7 +51,7 @@ public class JmhBenchmarkTest {
 
         @Setup(Level.Invocation)
         public void setUp() {
-    //        murmur3 = Hashing.murmur3_128().newHasher();
+            //        murmur3 = Hashing.murmur3_128().newHasher();
         }
     }
 
@@ -60,9 +60,9 @@ public class JmhBenchmarkTest {
     @BenchmarkMode(Mode.Throughput)
     public void benchMurmur3_128(ExecutionPlan plan) {
         for (int i = plan.iterations; i > 0; i--) {
-     //       plan.murmur3.putString(plan.password, Charset.defaultCharset());
+            //       plan.murmur3.putString(plan.password, Charset.defaultCharset());
         }
-      //  plan.murmur3.hash();
+        //  plan.murmur3.hash();
     }
 
     @Benchmark

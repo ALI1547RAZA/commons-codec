@@ -92,6 +92,32 @@ limitations under the License.
     </dependency>
 
     <!--JMH-->
+
+    <!-- EvoSuite runtime dependency -->
+
+    <dependency>
+      <groupId>org.evosuite</groupId>
+      <artifactId>evosuite-standalone-runtime</artifactId>
+      <version>1.0.6</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.1</version>
+      <scope>test</scope>
+    </dependency>
+
+
+      <!-- EvoSuite runtime dependency -->
+
+    <!-- OWASP DC -->
+
+
+
+
+    <!-- OWASP DC -->
+
   </dependencies>
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -132,6 +158,111 @@ limitations under the License.
     <defaultGoal>clean verify apache-rat:check japicmp:cmp checkstyle:check javadoc:javadoc</defaultGoal>
     <pluginManagement>
       <plugins>
+
+        <!-- spotbugs -->
+        <plugin>
+          <groupId>com.github.spotbugs</groupId>
+          <artifactId>spotbugs-maven-plugin</artifactId>
+          <version>4.8.6.4</version>
+          <dependencies>
+            <!-- overwrite dependency on spotbugs if you want to specify the version of spotbugs -->
+            <dependency>
+              <groupId>com.github.spotbugs</groupId>
+              <artifactId>spotbugs</artifactId>
+              <version>4.8.6</version>
+            </dependency>
+          </dependencies>
+        </plugin>
+
+        <plugin>
+          <groupId>com.github.spotbugs</groupId>
+          <artifactId>spotbugs-maven-plugin</artifactId>
+          <version>4.8.6.4</version>
+          <configuration>
+            <includeFilterFile>spotbugs-security-include.xml</includeFilterFile>
+            <excludeFilterFile>spotbugs-security-exclude.xml</excludeFilterFile>
+            <plugins>
+              <plugin>
+                <groupId>com.h3xstream.findsecbugs</groupId>
+                <artifactId>findsecbugs-plugin</artifactId>
+                <version>1.12.0</version>
+              </plugin>
+            </plugins>
+          </configuration>
+        </plugin>
+
+        <!-- spotbugs -->
+
+        <!-- EvoSuite runtime plugins -->
+        <plugin>
+          <groupId>org.evosuite.plugins</groupId>
+          <artifactId>evosuite-maven-plugin</artifactId>
+          <version>1.0.6</version>
+          <executions><execution>
+            <goals> <goal> generate </goal> </goals>
+            <phase> process-test-classes </phase>
+          </execution></executions>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>build-helper-maven-plugin</artifactId>
+          <version>1.8</version>
+          <executions>
+            <execution>
+              <id>add-test-source</id>
+              <phase>generate-test-sources</phase>
+              <goals>
+                <goal>add-test-source</goal>
+              </goals>
+              <configuration>
+                <sources>
+                  <source>evosuite</source>
+                </sources>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
+          <inherited>true</inherited>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>1.3.1</version>
+          <executions>
+            <execution>
+              <id>enforce-maven-3</id>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+              <configuration>
+                <rules>
+                  <requireMavenVersion>
+                    <version>3.1</version>
+                  </requireMavenVersion>
+                </rules>
+                <fail>true</fail>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.2</version>
+          <configuration>
+            <properties>
+              <property>
+                <name>listener</name>
+                <value>org.evosuite.runtime.InitializingListener</value>
+              </property>
+            </properties>
+          </configuration>
+        </plugin>
+
+        <!-- EvoSuite runtime plugins -->
+
         <!--JMH-->
 
         <plugin>
@@ -228,7 +359,7 @@ limitations under the License.
         </dependencies>
         <configuration>
           <targetClasses>org.apache.commons.codec*</targetClasses>
-          <targetTests>org.apache.commons.codec*</targetTests>
+          <targetTests>org.apache.commons.codec</targetTests>
         </configuration>
       </plugin>
       <!--pi test-->
@@ -344,10 +475,7 @@ limitations under the License.
           </rulesets>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>com.github.spotbugs</groupId>
-        <artifactId>spotbugs-maven-plugin</artifactId>
-      </plugin>
+
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>buildnumber-maven-plugin</artifactId>
